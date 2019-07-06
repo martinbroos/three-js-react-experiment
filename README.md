@@ -1,3 +1,17 @@
+# Three.js expiriment with React and Typescript
+
+Experiment with Three.js in combination with React and Typescript.
+
+**Questions that need to be answered:**
+
+- How performent is Three.js with a lot of items
+- Can we make a website that zooms through a long list of items positioned in depth, what gives an infinity feeling.
+- Is it easy to integrate with react? For example can the 3d items be clicked and trigger modals in React.
+- Can we fetch the items dynamicaly and filter them by user input
+- And most important can this be accomplished in an acceptable timeframe.
+
+# Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
