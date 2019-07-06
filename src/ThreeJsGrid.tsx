@@ -8,7 +8,7 @@ class ThreeJsGrid extends Component<Props> {
   private scene: THREE.Scene;
   private camera: THREE.PerspectiveCamera;
   private renderer: THREE.WebGLRenderer;
-  private tattooedLetterObjects: Array<THREE.Mesh> = [];
+  private gridItems: Array<THREE.Mesh> = [];
   private canvasRef = createRef<HTMLDivElement>();
   private controls = OrbitControls;
 
@@ -77,7 +77,7 @@ class ThreeJsGrid extends Component<Props> {
       cube.position.y = 0;
       cube.position.z = i * 2;
 
-      this.tattooedLetterObjects.push(cube);
+      this.gridItems.push(cube);
 
       this.scene.add(cube);
     }
@@ -86,7 +86,7 @@ class ThreeJsGrid extends Component<Props> {
   private initCamera() {
     this.camera.position.x = 0;
     this.camera.position.y = 0;
-    this.camera.position.z = this.getPositionOfFirstTattooElement() + 5;
+    this.camera.position.z = this.getPositionOfClosestGridItem() + 5;
   }
 
   private createControls() {
@@ -102,12 +102,11 @@ class ThreeJsGrid extends Component<Props> {
     this.controls.dampingFactor = 0.12;
 
     // @ts-ignore
-    this.controls.maxDistance = this.getPositionOfFirstTattooElement() + 5;
+    this.controls.maxDistance = this.getPositionOfClosestGridItem() + 5;
   }
 
-  private getPositionOfFirstTattooElement() {
-    return this.tattooedLetterObjects[this.tattooedLetterObjects.length - 1]
-      .position.z;
+  private getPositionOfClosestGridItem() {
+    return this.gridItems[this.gridItems.length - 1].position.z;
   }
 
   private update = () => {

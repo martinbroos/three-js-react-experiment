@@ -11,7 +11,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
     "three": "^0.106.2",
-    "three-orbitcontrols-ts": "^0.1.2",
+    "three-orbitcontrols-ts": "git+https://git@github.com/nicolaspanel/three-orbitcontrols-ts.git",
     "typescript": "3.5.2"
   },
   "scripts": {
